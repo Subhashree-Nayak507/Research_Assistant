@@ -1,0 +1,26 @@
+# ── Secrets — never commit these ──────────────────────────────
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# ── Python (backend) ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ── Node (frontend) ────────────────────────────────────────────
+node_modules/
+dist/
+build/
+.vite/
+
+# ── Editor / OS junk ────────────────────────────────────────────
+.DS_Store
+.vscode/
+.idea/
