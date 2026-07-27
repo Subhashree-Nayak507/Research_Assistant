@@ -1,5 +1,13 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8001'
-const WS_BASE = import.meta.env.VITE_WS_BASE || 'ws://localhost:8001'
+
+const sameOriginWs =
+  typeof window !== 'undefined'
+    ? `${window.location.protocol === 'https:' ? 'wss:' : 'ws:'}//${window.location.host}`
+    : ''
+
+const API_BASE =
+  import.meta.env.VITE_API_BASE ?? (import.meta.env.DEV ? 'http://localhost:8001' : '')
+const WS_BASE =
+  import.meta.env.VITE_WS_BASE ?? (import.meta.env.DEV ? 'ws://localhost:8001' : sameOriginWs)
 
 
 async function request(path, options = {}) {
