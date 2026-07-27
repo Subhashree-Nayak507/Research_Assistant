@@ -19,5 +19,8 @@ from app.config import settings
 limiter = Limiter(
     key_func=get_remote_address,  # rate-limit by client IP
     default_limits=["60/minute"],
-    storage_uri=settings.REDIS_URL if settings.ENVIRONMENT == "production" else "memory://",
+    # Use Redis only if a real REDIS_URL was actually configured — this
+    # can never crash from a missing setting, unlike checking
+    # ENVIRONMENT == "production" and assuming Redis exists because of it.
+    storage_uri=settings.REDIS_URL or "memory://",
 )

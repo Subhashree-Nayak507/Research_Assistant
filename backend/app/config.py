@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
     DATABASE_URL: str = ""
+    REDIS_URL: str = ""
 
     TAVILY_API_KEY: str = ""
     TAVILY_MAX_RESULTS: int = 5
