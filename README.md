@@ -314,7 +314,7 @@ All LLM outputs are validated with **Pydantic** before entering the application.
 ## Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Subhashree-Nayak507/Research_Assistant.git
 
 cd AI_Research_Assistant
 ```
